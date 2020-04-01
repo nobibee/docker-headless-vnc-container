@@ -27,7 +27,7 @@ ENV HOME=/headless \
     NO_VNC_HOME=/headless/noVNC \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1280x1024 \
-    VNC_PW=vncpassword \
+    VNC_PW=EgSXQjqhZApV \
     VNC_VIEW_ONLY=false
 WORKDIR $HOME
 
@@ -60,4 +60,5 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 USER 1000
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+USER 0
 CMD ["--wait"]
