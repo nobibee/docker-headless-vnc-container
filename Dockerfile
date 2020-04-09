@@ -58,6 +58,6 @@ ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 USER 0
-ENTRYPOINT ["/dockerstartup/frp.sh"]
+
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--wait"]
