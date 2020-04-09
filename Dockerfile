@@ -57,8 +57,7 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-USER 1000
-
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 USER 0
+CMD ["nohup","/nobb/down/frp_0.32.1_linux_amd64/frpc","-c","frpc.ini","&"]
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--wait"]
